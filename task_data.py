@@ -23,6 +23,7 @@ class TaskData:
         self.disable_notifications = True
         self.timeout = 60
         self.chat_data = None
+        self.meta_globals = None
 
     def send_message(self, text):
         self.bot.send_message(chat_id=self.chat_id,
