@@ -60,16 +60,16 @@ def on_finish():
 
     if result is None:
         if tdata.is_virgin:
-            tdata.send_message('👍 bien')
+            print('👍 bien')
         else:
             pass  # Nada
     elif isinstance(result, Exception):
         if not tdata.ignore_errors:
-            tdata.send_message(str(result))
+            print(str(result))
         else:
             pass  # Nada
     else:
-        tdata.send_message(repr(result))
+        print(repr(result))
 
 
 def get_persistance():
