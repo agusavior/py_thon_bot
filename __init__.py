@@ -6,29 +6,19 @@ from typing import Dict
 
 from chat_data import ChatData
 import telegram_bot
-from utils import read_lines_or_create_file, run_function_or_coroutine
-import task_data
 
-PASSWORD = 'kuroshiro20'
+import task_data
 
 ALLOWED_USER_IDS = {
     680640473,
     43759228
 }
 
-# No me borres esto agus
-# f = []
-# for (dirpath, dirnames, filenames) in walk(PERSISTANCE_DIR):
-#    print(dirpath, dirnames, filenames)
-
 # The keys of this dict are chatids, and the values of this dict are dicts of 'globals'
 chat_data_of: Dict[int, ChatData] = dict()
 
 # The allowed user ids
 allowed_user_ids = ALLOWED_USER_IDS
-
-password = PASSWORD
-
 
 async def on_message(update, context):
     # Auth
@@ -93,8 +83,11 @@ async def __on_message(update, context):
 
 async def loop():
     while True:
-        print('Hello')
-        await asyncio.sleep(2)
+        await asyncio.sleep(1)
+
+        # TODO:
+        #for chat_data in chat_data_of.values():
+        #    await chat_data.run_function_of_globals('on_each_second')
 
 
 async def main():
