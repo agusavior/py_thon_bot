@@ -24,6 +24,7 @@ class TaskData:
         self.timeout = 60
         self.chat_data = None
         self.meta_globals = None
+        self.telegram_message = None
 
     def send_message(self, text):
         self.bot.send_message(chat_id=self.chat_id,

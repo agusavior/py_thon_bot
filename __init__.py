@@ -42,6 +42,7 @@ async def on_message(update, context):
     tdata.bot = bot
     tdata.chat_id = chat_id
     tdata.root_message_id = message.message_id
+    tdata.telegram_message = message
     tdata.meta_globals = globals()
 
     if chat_id not in chat_data_of:
