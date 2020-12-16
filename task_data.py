@@ -36,22 +36,6 @@ class TaskData:
         # This means that this task has used at least one send_message
         self.is_virgin = False
 
-    async def on_finish(self):
-        result = self.result
-        if result is None:
-            if self.is_virgin:
-                self.send_message(OK_RESULT)
-            else:
-                pass  # Nada
-        elif isinstance(result, Exception):
-            if not self.ignore_errors:
-                self.send_message(str(result))
-            else:
-                pass  # Nada
-        else:
-            self.send_message(repr(result))
-
-
 def get() -> TaskData:
     return __get_task_att('__data')
 
