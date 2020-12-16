@@ -29,7 +29,6 @@ async def on_slash_command(string):
     tdata.ignore_errors = False
 
     try:
-        print(words[1:])
         val = await utils.run_function_or_coroutine(function, *words[1:])
     except Exception as e:
         val = e
